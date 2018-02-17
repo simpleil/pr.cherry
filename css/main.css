@@ -26,12 +26,12 @@ header .logo {
   font-weight: bold;
   padding-left: 8px;
 }
-header .logo a h1 {
+header .logo h1 {
   color: #a5adb8;
   font-size: 30px;
   line-height: 26px;
 }
-header .logo a h1 span {
+header .logo h1 span {
   color: #ae4b5d;
 }
 header .logo p {
@@ -40,6 +40,7 @@ header .logo p {
   line-height: 20px;
 }
 header .search {
+  position: relative;
   float: right;
 }
 header .search form input[type=text] {
@@ -68,15 +69,21 @@ header .search form input[type=button] {
   background-position: 50% 50%;
   border: 0;
   background-color: #ae4b5d;
-  transition: all 0.5s ease 0s;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
 }
 header .search form input[type=button]:hover {
   background-color: #793440;
   cursor: pointer;
   outline: none;
+}
+header .menu_icon {
+  display: none;
+}
+header .menu_icon svg g {
+  fill: #ae4b5d;
 }
 .info {
   background-color: #e1e2e5;
@@ -88,7 +95,7 @@ header .search form input[type=button]:hover {
   background: url('../img/bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 45px 0 40px 40px;
+  padding: 45px 26px 40px 40px;
 }
 .info .container .titles h2 {
   font-size: 30px;
@@ -162,7 +169,7 @@ header .search form input[type=button]:hover {
 }
 .services .container {
   background-color: #fff;
-  padding: 20px 0px 60px 20px;
+  padding: 20px 20px 60px 20px;
 }
 .services .container .contact_form {
   float: left;
@@ -283,7 +290,7 @@ header .search form input[type=button]:hover {
   float: left;
 }
 .services .container .service_info .service_title {
-  max-width: 100%;
+  max-width: inherit;
 }
 .services .container .service_info .service_title h3 {
   font-size: 24px;
@@ -336,10 +343,12 @@ header .search form input[type=button]:hover {
   font-size: 14px;
   font-weight: normal;
   margin-bottom: 10px;
+  text-shadow: 0px 0px 1px #bec1c4;
 }
 .services .container .service_info .list_info .list_block h4 span {
   background-color: #dedede;
   border-radius: 3px;
+  text-shadow: 0;
 }
 .services .container .service_info .list_info .list_block ul {
   padding-left: 20px;
@@ -462,9 +471,10 @@ footer .container .contact_info .hour {
   list-style-type: none;
 }
 footer .container .contact_info .hour li {
-  height: 16px;
+  height: auto;
   background: url('../img/hour.png') no-repeat left center;
   padding-left: 25px;
+  padding-top: 2px;
   margin-bottom: 10px;
 }
 footer .container .contact_info .color_marker {
@@ -492,4 +502,194 @@ footer .container .contact_info .without_marker li a {
 }
 footer .container .contact_info:last-child {
   margin-right: 0 !important;
+}
+@media only screen and (min-width: 768px) and (max-width: 978px) {
+  header .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .services .container .service_info {
+    float: none;
+  }
+  .services .container .service_info .list_info {
+    margin-top: 50px;
+    padding-left: 16px;
+  }
+  .services .container .service_info .table_info {
+    padding-left: 16px;
+  }
+  footer .container {
+    padding-left: 20px;
+  }
+  footer .container .contact_info {
+    margin-right: 10px;
+    width: 32%;
+  }
+  footer .container .contact_info:last-child {
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+  header .container {
+    width: 100%;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  header .container .search {
+    display: none;
+  }
+  header .container .menu_icon {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 26px;
+  }
+  .info .titles {
+    padding-right: 120px !important;
+  }
+  .info nav {
+    display: none;
+  }
+  .info .mob_menu {
+    display: block;
+    position: absolute;
+    float: none;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    padding: 0 !important;
+    background: rgba(174, 75, 93, 0.9);
+  }
+  .info .mob_menu ul {
+    float: none !important;
+  }
+  .info .mob_menu ul li {
+    display: block !important;
+    padding: 15px 0!important;
+    text-align: center;
+    border-top: 1px solid #a5adb8;
+  }
+  .info .mob_menu ul li:hover {
+    background: rgba(40, 45, 50, 0.9);
+  }
+  .services .container {
+    display: flex;
+    flex-flow: wrap;
+    padding-right: 26px;
+  }
+  .services .container .contact_form {
+    margin: 30px auto;
+    float: none;
+    order: 2;
+    width: auto;
+    text-align: center;
+  }
+  .services .container .service_info {
+    padding-left: 26px;
+    order: 1;
+    float: none;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .contact_info {
+    margin-top: 25px;
+    margin-right: 0px!important;
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  header {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+  header .logo {
+    float: none;
+    padding: 0;
+  }
+  header .search {
+    display: none;
+  }
+  header .menu_icon {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 26px;
+  }
+  .info .container .titles {
+    padding-left: 26px !important;
+    padding-right: 26px !important;
+  }
+  .info .container nav {
+    display: none;
+  }
+  .info .container .mob_menu {
+    display: block;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    padding: 0;
+  }
+  .info .container .mob_menu ul {
+    float: none;
+  }
+  .info .container .mob_menu ul li {
+    display: block !important;
+    padding: 15px 0!important;
+    text-align: center;
+    border-top: 1px solid #a5adb8;
+  }
+  .info .container .mob_menu ul li:hover {
+    background: rgba(40, 45, 50, 0.9);
+  }
+  .services .container .contact_form {
+    float: none;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+  }
+  .services .container .contact_form form {
+    width: 100%;
+    margin: 0;
+  }
+  .services .container .contact_form .article {
+    text-align: left;
+  }
+  .services .container .service_info {
+    float: none;
+    margin-top: 40px;
+    padding-left: 16px;
+  }
+  .services .container .list_info {
+    margin-top: 30px;
+  }
+  .services .container .table_info {
+    margin: 0 auto;
+  }
+  .services .container .table_info table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .services .container .table_info table th {
+    padding: 5px !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .services .container .table_info table td {
+    padding: 5px !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .contact_info {
+    margin-top: 25px;
+    display: block;
+    margin-right: 0 !important;
+  }
 }
